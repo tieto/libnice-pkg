@@ -1,8 +1,8 @@
-libnice (0.1.10+sipe-1) UNRELEASED; urgency=medium
+libnice (0.1.13+sipe-1) UNRELEASED; urgency=medium
 
   * libnice package with Sipe patches.
 
- -- Jakub Adam <jakub.adam@ktknet.cz>  Fri, 30 Jan 2015 20:17:25 +0100
+ -- Jakub Adam <jakub.adam@ktknet.cz>  Mon, 18 May 2015 15:24:56 +0200
 
 libnice (0.1.7-1) unstable; urgency=low
 
