@@ -1,0 +1,25 @@
+From 3e4b37389f4fbc6ba275c84d7bc91556d488844d Mon Sep 17 00:00:00 2001
+From: Jakub Adam <jakub.adam@ktknet.cz>
+Date: Fri, 21 Aug 2015 08:45:26 +0200
+Subject: [PATCH] fix-build-with-glib-2.40
+
+---
+ socket/udp-bsd.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/socket/udp-bsd.c b/socket/udp-bsd.c
+index d7346ff..79aa14d 100644
+--- a/socket/udp-bsd.c
++++ b/socket/udp-bsd.c
+@@ -207,7 +207,7 @@ socket_recv_messages (NiceSocket *sock,
+       /* Handle ECONNRESET here as if it were EWOULDBLOCK; see
+        * https://phabricator.freedesktop.org/T121 */
+       if (g_error_matches (gerr, G_IO_ERROR, G_IO_ERROR_WOULD_BLOCK) ||
+-          g_error_matches (gerr, G_IO_ERROR, G_IO_ERROR_CONNECTION_CLOSED))
++          g_error_matches (gerr, G_IO_ERROR, G_IO_ERROR_BROKEN_PIPE))
+         recvd = 0;
+       else
+         error = TRUE;
+-- 
+2.5.0
+
